@@ -15,7 +15,7 @@
             overflow-x: hidden;
         }
 
-        /* ENCABEZADO - IGUAL A ZONATV */
+        /* ENCABEZADO */
         .header {
             background: url('https://www.zonatvmx.com/portada.jpg') no-repeat center center;
             background-size: cover;
@@ -24,10 +24,8 @@
         }
         .header-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.7);
         }
         .header-content {
@@ -36,7 +34,6 @@
         }
         .header-logo {
             max-width: 300px;
-            height: auto;
             margin-bottom: 20px;
         }
         .header-text {
@@ -44,7 +41,9 @@
             margin-bottom: 30px;
             text-shadow: 2px 2px 4px #000;
         }
-        .whatsapp-main {
+
+        /* BOTONES WHATSAPP */
+        .whatsapp-btn {
             display: inline-block;
             padding: 15px 40px;
             background-color: #25d366;
@@ -53,20 +52,20 @@
             border-radius: 8px;
             font-weight: bold;
             font-size: 1.3rem;
-            text-shadow: 1px 1px 2px #000;
             box-shadow: 0 0 15px rgba(37,211,102,0.7);
+            margin-bottom: 20px;
         }
 
-        /* SECCIÓN PASOS - IGUAL A ZONATV */
+        /* SECCIÓN PASOS */
         .steps-section {
             padding: 50px 20px;
             background-color: #111;
         }
-        .steps-title {
+        .section-title {
             font-size: 2rem;
-            margin-bottom: 40px;
             color: #ff0000;
             text-transform: uppercase;
+            margin-bottom: 40px;
         }
         .steps-container {
             display: flex;
@@ -94,7 +93,77 @@
             color: #ccc;
         }
 
-        /* SECCIÓN DISTRIBUIDOR - IGUAL A ZONATV */
+        /* SECCIÓN PLANES */
+        .plans-section {
+            padding: 50px 20px;
+            background: url('https://www.zonatvmx.com/fondo.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+        .plans-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85);
+        }
+        .plans-content {
+            position: relative;
+            z-index: 1;
+        }
+        .rate-info {
+            font-size: 1rem;
+            color: #25d366;
+            margin-bottom: 20px;
+        }
+        .plans-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .plan-box {
+            width: 280px;
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #ff0000;
+        }
+        .plan-title {
+            font-size: 1.5rem;
+            color: #25d366;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .plan-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .plan-price span {
+            font-size: 1.2rem;
+            color: #ccc;
+            display: block;
+            margin-top: 5px;
+        }
+        .plan-features {
+            text-align: left;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .plan-features li {
+            list-style: none;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .plan-features li::before {
+            content: "✔";
+            color: #25d366;
+            position: absolute;
+            left: 0;
+        }
+
+        /* SECCIÓN DISTRIBUIDOR */
         .distributor-section {
             padding: 50px 20px;
             background: url('https://www.zonatvmx.com/fondo.jpg') no-repeat center center;
@@ -103,10 +172,8 @@
         }
         .distributor-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.8);
         }
         .distributor-content {
@@ -119,8 +186,8 @@
         }
         .distributor-title {
             font-size: 1.8rem;
-            margin-bottom: 15px;
             color: #ff0000;
+            margin-bottom: 15px;
         }
         .distributor-text {
             font-size: 1.1rem;
@@ -128,16 +195,10 @@
             margin: 0 auto 25px;
         }
 
-        /* SECCIÓN COMPATIBLE - IGUAL A ZONATV */
+        /* SECCIÓN COMPATIBLE */
         .compatible-section {
             padding: 50px 20px;
             background-color: #111;
-        }
-        .compatible-title {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: #ff0000;
-            text-transform: uppercase;
         }
         .devices-container {
             display: flex;
@@ -155,22 +216,18 @@
             font-size: 1.1rem;
         }
 
-        /* SECCIÓN DATOS - IGUAL A ZONATV */
+        /* SECCIÓN DATOS */
         .data-section {
             padding: 50px 20px;
             background-color: #000;
-        }
-        .data-title {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: #ff0000;
-            text-transform: uppercase;
         }
         .data-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
         }
         .data-box {
             width: 180px;
@@ -183,10 +240,11 @@
             font-size: 2.5rem;
             font-weight: bold;
             color: #25d366;
+            display: block;
             margin-bottom: 10px;
         }
 
-        /* FOOTER - IGUAL A ZONATV */
+        /* FOOTER */
         footer {
             padding: 30px 20px;
             background-color: #111;
@@ -198,7 +256,7 @@
             margin-bottom: 5px;
         }
 
-        /* BOTÓN WHATSAPP FIJO - IGUAL A ZONATV */
+        /* BOTÓN WHATSAPP FLOTANTE */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -210,54 +268,105 @@
             height: auto;
         }
     </style>
+    <!-- WIDGET TIPO DE CAMBIO -->
+    <link rel="stylesheet" href="https://unirateapi.com/lander/static/css/unirate-widgets.css">
 </head>
 <body>
-    <!-- ENCABEZADO EXACTO A ZONATV -->
+    <!-- ENCABEZADO - LOGO QUE YA TENÍAMOS -->
     <div class="header">
         <div class="header-overlay"></div>
         <div class="header-content">
             <img src="https://multitvmx.github.io/imagenes/logo-multitv.png" alt="MULTI TV" class="header-logo">
-            <p class="header-text">+3000 CANALES | +17000 PELICULAS | +2500 SERIES | DEPORTES EN VIVO | PREMIUM</p>
-            <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+MultiTV%2C+enseguida+serás+atendido+por+un+asesor.%0A%0ASolicito+información+o+demo+gratis." class="whatsapp-main">CONTÁCTANOS POR WHATSAPP</a>
+            <p class="header-text">+3000 CANALES | +17000 PELÍCULAS | +2500 SERIES</p>
+            <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido." class="whatsapp-btn">CONTÁCTANOS POR WHATSAPP</a>
+            <a href="https://wa.me/525577465407?text=Quiero+mi+prueba+gratis" class="whatsapp-btn">SOLICITA TU PRUEBA GRATIS</a>
         </div>
     </div>
 
-    <!-- SECCIÓN PASOS EXACTA A ZONATV -->
+    <!-- SECCIÓN PASOS -->
     <div class="steps-section">
-        <h2 class="steps-title">3 PASOS SENCILLOS PARA DISFRUTAR</h2>
+        <h2 class="section-title">3 PASOS SENCILLOS PARA DISFRUTAR</h2>
         <div class="steps-container">
             <div class="step-box">
-                <img src="https://www.zonatvmx.com/paso1-removebg-preview.png" alt="Paso 1" class="step-img">
+                <img src="https://www.zonatvmx.com/paso1.png" alt="Paso 1" class="step-img">
                 <h3 class="step-title">PASO 1</h3>
                 <p class="step-desc">DESCARGA E INSTALA IPTV SMARTERS PRO EN TU DISPOSITIVO</p>
             </div>
             <div class="step-box">
-                <img src="https://www.zonatvmx.com/descarga-removebg-preview.png" alt="Paso 2" class="step-img">
+                <img src="https://www.zonatvmx.com/paso2.png" alt="Paso 2" class="step-img">
                 <h3 class="step-title">PASO 2</h3>
-                <p class="step-desc">SOLICITA TU PRUEBA GRATUITA Y DISFRUTA DEL CONTENIDO</p>
+                <p class="step-desc">SOLICITA TU PRUEBA GRATUITA Y DISFRUTA EL CONTENIDO</p>
             </div>
             <div class="step-box">
-                <img src="https://www.zonatvmx.com/paso3-removebg-preview.png" alt="Paso 3" class="step-img">
+                <img src="https://www.zonatvmx.com/paso3.png" alt="Paso 3" class="step-img">
                 <h3 class="step-title">PASO 3</h3>
-                <p class="step-desc">ELIGE TU PLAN Y DISFRUTA DE TODO EL CONTENIDO TODO EL AÑO</p>
+                <p class="step-desc">ELIGE TU PLAN Y DISFRUTA TODO EL CONTENIDO TODO EL TIEMPO</p>
             </div>
         </div>
     </div>
 
-    <!-- SECCIÓN DISTRIBUIDOR EXACTA A ZONATV -->
+    <!-- SECCIÓN PLANES - BOTONES INDIVIDUALES -->
+    <div class="plans-section">
+        <div class="plans-overlay"></div>
+        <div class="plans-content">
+            <h2 class="section-title">NUESTROS PLANES Y PRECIOS</h2>
+            <p class="rate-info">TIPO DE CAMBIO EN TIEMPO REAL:</p>
+            <div id="unirate-badge" data-from="USD" data-to="MXN" data-amount="1"></div>
+            
+            <div class="plans-container">
+                <div class="plan-box">
+                    <h3 class="plan-title">PLAN INICIAL</h3>
+                    <p class="plan-price">MXN $500 (3 MESES)<span>USD $26.50 (aproximado)</span></p>
+                    <ul class="plan-features">
+                        <li>+3000 Canales</li>
+                        <li>+17000 Películas</li>
+                        <li>+2500 Series</li>
+                        <li>Compatible con todos los dispositivos</li>
+                    </ul>
+                    <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido.%0A%0APlan+elegido%3A+PLAN+INICIAL" class="whatsapp-btn">SOLICITAR PLAN</a>
+                </div>
+
+                <div class="plan-box">
+                    <h3 class="plan-title">PLAN FAMILIAR</h3>
+                    <p class="plan-price">MXN $950 (6 MESES)<span>USD $50.35 (aproximado)</span></p>
+                    <ul class="plan-features">
+                        <li>Todo del Plan Inicial</li>
+                        <li>Contenido infantil</li>
+                        <li>Deportes en vivo</li>
+                        <li>Soporte prioritario</li>
+                    </ul>
+                    <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido.%0A%0APlan+elegido%3A+PLAN+FAMILIAR" class="whatsapp-btn">SOLICITAR PLAN</a>
+                </div>
+
+                <div class="plan-box">
+                    <h3 class="plan-title">PLAN ULTRA</h3>
+                    <p class="plan-price">MXN $1800 (12 MESES)<span>USD $95.40 (aproximado)</span></p>
+                    <ul class="plan-features">
+                        <li>Todo del Plan Familiar</li>
+                        <li>Contenido premium</li>
+                        <li>Múltiples dispositivos a la vez</li>
+                        <li>Descuento especial anual</li>
+                    </ul>
+                    <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido.%0A%0APlan+elegido%3A+PLAN+ULTRA" class="whatsapp-btn">SOLICITAR PLAN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DISTRIBUIDOR -->
     <div class="distributor-section">
         <div class="distributor-overlay"></div>
         <div class="distributor-content">
-            <img src="https://www.zonatvmx.com/familiav2.png" alt="Distribuidor" class="distributor-img">
-            <h2 class="distributor-title">¿QUIERES SER DISTRIBUIDOR MULTI TV?</h2>
-            <p class="distributor-text">NUESTRO SERVICIO ESTÁ DISPONIBLE EN TODO EL MUNDO, SI NO ERES DE MÉXICO TAMBIÉN TE PROPORCIONAMOS EL SERVICIO, CONSULTA POR NUESTROS PAQUETES PARA DISTRIBUIDORES.</p>
-            <a href="https://wa.me/525577465407?text=Hola%21+Quiero+información+sobre+ser+distribuidor+de+MultiTV." class="whatsapp-main">INFORMACIÓN PARA DISTRIBUIDORES</a>
+            <img src="https://www.zonatvmx.com/familia.png" alt="Distribuidor" class="distributor-img">
+            <h2 class="distributor-title">¿QUIERES SER DISTRIBUIDOR DE MULTI TV?</h2>
+            <p class="distributor-text">NUESTRO SERVICIO ESTÁ DISPONIBLE EN TODO EL MUNDO. SI NO ERES DE MÉXICO, TAMBIÉN TE PROPORCIONAMOS EL SERVICIO. CONSULTA POR NUESTROS PAQUETES PARA DISTRIBUIDORES.</p>
+            <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido.%0A%0AQuiero+información+de+ser+distribuidor." class="whatsapp-btn">INFORMACIÓN PARA DISTRIBUIDORES</a>
         </div>
     </div>
 
-    <!-- SECCIÓN COMPATIBLE EXACTA A ZONATV -->
+    <!-- SECCIÓN COMPATIBLE -->
     <div class="compatible-section">
-        <h2 class="compatible-title">COMPATIBLE CON TUS DISPOSITIVOS</h2>
+        <h2 class="section-title">COMPATIBLE CON TUS DISPOSITIVOS</h2>
         <div class="devices-container">
             <div class="device-box">SMART TV</div>
             <div class="device-box">PC / LAPTOP</div>
@@ -270,9 +379,9 @@
         </div>
     </div>
 
-    <!-- SECCIÓN DATOS EXACTA A ZONATV -->
+    <!-- SECCIÓN DATOS -->
     <div class="data-section">
-        <h2 class="data-title">NUESTROS DATOS</h2>
+        <h2 class="section-title">NUESTROS DATOS</h2>
         <div class="data-container">
             <div class="data-box">
                 <span class="data-number">+2</span>
@@ -297,15 +406,20 @@
         </div>
     </div>
 
-    <!-- FOOTER EXACTO A ZONATV -->
+    <!-- FOOTER -->
     <footer>
         <p class="footer-text">© 2024 MULTI TV - TODOS LOS DERECHOS RESERVADOS</p>
         <p class="footer-text">SITIO OFICIAL: https://multitvmx.github.io</p>
     </footer>
 
-    <!-- BOTÓN WHATSAPP FIJO EXACTO A ZONATV -->
+    <!-- BOTÓN WHATSAPP FLOTANTE - IMAGEN PROPIA -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+MultiTV%2C+enseguida+serás+atendido+por+un+asesor."><img src="https://www.zonatvmx.com/BOTON-WHATSAPP.png" alt="WhatsApp"></a>
+        <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido.">
+            <img src="https://multitvmx.github.io/imagenes/whatsapp.png" alt="WhatsApp">
+        </a>
     </div>
+
+    <!-- SCRIPT TIPO DE CAMBIO -->
+    <script src="https://unirateapi.com/lander/static/js/unirate-widgets.js"></script>
 </body>
 </html>
