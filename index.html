@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MULTI TV - EL MEJOR ENTRETENIMIENTO ON LINE</title>
+    <title>Multitv - El Mejor Entretenimiento On Line</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: Arial, sans-serif; 
-            background-color: #000; 
-            color: #fff; 
-            text-align: center; 
-            line-height: 1.5;
-            overflow-x: hidden;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            text-align: center;
+            padding-bottom: 80px;
         }
+        /* HEADER */
         .header {
-            background: url('https://multitvmx.github.io/imagenes/portada.jpg') no-repeat center center;
+            background: url('https://via.placeholder.com/1200x300?text=FONDO+ABSTRACTO') no-repeat center center;
             background-size: cover;
-            padding: 60px 20px;
+            padding: 40px 20px;
             position: relative;
         }
         .header-overlay {
@@ -34,334 +35,236 @@
             max-width: 300px;
             margin-bottom: 20px;
         }
-        .header-text {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px #000;
+        .header-title {
+            font-size: 1.8rem;
+            color: #ff0000;
+            margin-bottom: 10px;
         }
+        .header-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        /* BOTONES */
         .whatsapp-btn {
             display: inline-block;
-            padding: 15px 40px;
+            padding: 12px 30px;
             background-color: #25d366;
             color: #fff;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 5px;
             font-weight: bold;
-            font-size: 1.3rem;
-            box-shadow: 0 0 15px rgba(37,211,102,0.7);
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            box-shadow: 0 0 8px rgba(37,211,102,0.7);
+            margin: 10px 0;
         }
-        .steps-section {
-            padding: 50px 20px;
-            background-color: #111;
+        /* SECCIONES GENERALES */
+        .section {
+            padding: 30px 20px;
         }
         .section-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #ff0000;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            margin-bottom: 40px;
         }
+        /* PREGUNTAS FRECUENTES */
+        .faq-container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .faq-item {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .faq-question {
+            color: #25d366;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        /* PASOS PARA DISFRUTAR */
         .steps-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 400px;
+            margin: 0 auto;
         }
         .step-box {
-            width: 250px;
             background-color: #1a1a1a;
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 8px;
         }
-        .step-title {
-            font-size: 1.3rem;
+        .step-img {
+            max-width: 80px;
             margin-bottom: 10px;
-            color: #25d366;
         }
-        .step-desc {
-            font-size: 0.95rem;
-            color: #ccc;
-        }
-        .plans-section {
-            padding: 50px 20px;
+        /* DISTRIBUIDORES */
+        .distributor-section {
             background-color: #1a1a1a;
-            position: relative;
+            margin: 20px 0;
         }
-        .plans-content {
-            position: relative;
-            z-index: 1;
-        }
-        .rate-info {
-            font-size: 1rem;
-            color: #25d366;
-            margin-bottom: 20px;
-        }
-        .plans-container {
+        /* COMPATIBILIDAD */
+        .devices-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
+            gap: 15px;
+            margin-top: 20px;
         }
-        .plan-box {
-            width: 280px;
-            background-color: #222;
-            padding: 30px;
-            border-radius: 10px;
-            border: 2px solid #ff0000;
-        }
-        .plan-title {
-            font-size: 1.5rem;
-            color: #25d366;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        .plan-price {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .plan-price span {
-            font-size: 1.2rem;
-            color: #ccc;
-            display: block;
-            margin-top: 5px;
-        }
-        .plan-features {
-            text-align: left;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-        .plan-features li {
-            list-style: none;
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-        .plan-features li::before {
-            content: "✔";
-            color: #25d366;
-            position: absolute;
-            left: 0;
-        }
-        .distributor-section {
-            padding: 50px 20px;
-            background-color: #111;
-            position: relative;
-        }
-        .distributor-content {
-            position: relative;
-            z-index: 1;
-        }
-        .distributor-title {
-            font-size: 1.8rem;
-            color: #ff0000;
-            margin-bottom: 15px;
-        }
-        .distributor-text {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 25px;
-        }
-        .compatible-section {
-            padding: 50px 20px;
+        .device-tag {
             background-color: #1a1a1a;
+            padding: 10px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
         }
-        .devices-container {
+        /* DATOS DEL SERVICIO */
+        .data-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .device-box {
-            background-color: #222;
-            padding: 15px 25px;
-            border-radius: 8px;
-            border: 1px solid #ff0000;
-            font-size: 1.1rem;
-        }
-        .data-section {
-            padding: 50px 20px;
-            background-color: #111;
-        }
-        .data-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            max-width: 900px;
-            margin: 0 auto;
+            margin-top: 20px;
         }
         .data-box {
-            width: 180px;
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #333;
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 120px;
         }
         .data-number {
-            font-size: 2.5rem;
-            font-weight: bold;
             color: #25d366;
+            font-size: 1.5rem;
+            font-weight: bold;
             display: block;
-            margin-bottom: 10px;
-        }
-        footer {
-            padding: 30px 20px;
-            background-color: #1a1a1a;
-            border-top: 3px solid #ff0000;
-        }
-        .footer-text {
-            font-size: 0.9rem;
-            color: #ccc;
             margin-bottom: 5px;
         }
-        .whatsapp-float {
+        /* FOOTER */
+        footer {
+            background-color: #1a1a1a;
+            padding: 20px;
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-        }
-        /* CAMBIO 1: TAMAÑO REDUCIDO DEL ICONO FLOTANTE */
-        .whatsapp-float-btn {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: #25d366;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            box-shadow: 0 0 10px rgba(37,211,102,0.7);
+            bottom: 0; left: 0;
+            width: 100%;
+            font-size: 0.9rem;
         }
     </style>
-    <link rel="stylesheet" href="https://unirateapi.com/lander/static/css/unirate-widgets.css">
 </head>
 <body>
+    <!-- HEADER PRINCIPAL -->
     <div class="header">
         <div class="header-overlay"></div>
         <div class="header-content">
-            <!-- LOGO QUE SÍ SE VE -->
-            <img src="https://multitvmx.github.io/imagenes/logo-multitv.png" alt="MULTI TV" class="header-logo">
-            <p class="header-text">+3000 CANALES | +17000 PELÍCULAS | +2500 SERIES</p>
-            <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido." class="whatsapp-btn">CONTÁCTANOS POR WHATSAPP</a>
-            <a href="https://wa.me/525577465407?text=Quiero+mi+prueba+gratis" class="whatsapp-btn">SOLICITA TU PRUEBA GRATUITA</a>
+            <img src="https://multitvmx.github.io/imagenes/logo-multitv.png" alt="Logo Multitv" class="header-logo">
+            <h1 class="header-title">Multitv</h1>
+            <p class="header-subtitle">El Mejor Entretenimiento On Line</p>
+            <p style="margin-bottom: 20px;">+ 3000 Canales, +17000 Películas, + 2500 Series, Deportes, PPV, Canales Premium</p>
+            <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+mi+demo+gratis" class="whatsapp-btn">Solicita Demo Gratis</a>
         </div>
     </div>
-    <div class="steps-section">
-        <h2 class="section-title">3 PASOS SENCILLOS PARA DISFRUTAR</h2>
+
+    <!-- SECCIÓN DE PREGUNTAS FRECUENTES -->
+    <div class="section">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <p class="faq-question">¿Cuánto contenido ofrece el servicio?</p>
+                <p>+ 3000 Canales, +17000 Películas, + 2500 Series, además de Deportes en vivo y contenido PPV.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">¿Cómo empiezo a usar el servicio?</p>
+                <p>Descarga e instala la app correspondiente en tu dispositivo, luego solicita tu demo gratuita vía WhatsApp.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">¿Es un servicio mundial?</p>
+                <p>Sí, nuestro servicio está disponible en cualquier país del mundo, no solo en México.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">¿Cómo puedo ser distribuidor?</p>
+                <p>Contáctanos vía WhatsApp para conocer los paquetes y condiciones para vender nuestro servicio en tu país.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE PASOS PARA DISFRUTAR -->
+    <div class="section">
+        <h2 class="section-title">Empieza a disfrutar en 3 sencillos pasos</h2>
         <div class="steps-container">
             <div class="step-box">
-                <h3 class="step-title">PASO 1</h3>
-                <!-- CAMBIO 2: TEXTO ACTUALIZADO -->
-                <p class="step-desc">DESCARGA E INSTALA APP O APK, IPTVSMARTERS, ZONA TV O PLAYLATIN EN TU DISPOSITIVO</p>
+                <img src="https://via.placeholder.com/80x80?text=PASO+1" alt="Paso 1" class="step-img">
+                <p style="font-weight: bold; margin-bottom: 5px;">Paso 1</p>
+                <p>Descarga e Instala la app en tu dispositivo (IPTV Smarters, Zona TV o Playlatin).</p>
             </div>
             <div class="step-box">
-                <h3 class="step-title">PASO 2</h3>
-                <p class="step-desc">SOLICITA TU PRUEBA GRATUITA Y DISFRUTA EL CONTENIDO</p>
+                <img src="https://via.placeholder.com/80x80?text=PASO+2" alt="Paso 2" class="step-img">
+                <p style="font-weight: bold; margin-bottom: 5px;">Paso 2</p>
+                <p>Prueba nuestro contenido completamente gratis.</p>
             </div>
             <div class="step-box">
-                <h3 class="step-title">PASO 3</h3>
-                <p class="step-desc">ELIGE TU PLAN Y DISFRUTA TODO EL CONTENIDO TODO EL TIEMPO</p>
+                <img src="https://via.placeholder.com/80x80?text=PASO+3" alt="Paso 3" class="step-img">
+                <p style="font-weight: bold; margin-bottom: 5px;">Paso 3</p>
+                <p>¿Te gustó? Solicita tu acceso oficial vía WhatsApp.</p>
+                <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+mi+acceso+oficial" class="whatsapp-btn">Solicitar Acceso</a>
             </div>
         </div>
     </div>
-    <div class="plans-section">
-        <div class="plans-content">
-            <h2 class="section-title">NUESTROS PLANES Y PRECIOS</h2>
-            <p class="rate-info">TIPO DE CAMBIO EN TIEMPO REAL:</p>
-            <div id="unirate-badge" data-from="USD" data-to="MXN" data-amount="1"></div>
-            <div class="plans-container">
-                <div class="plan-box">
-                    <h3 class="plan-title">PLAN INICIAL</h3>
-                    <p class="plan-price">MXN $500 (3 MESES)<span>USD $26.50 (aproximado)</span></p>
-                    <ul class="plan-features">
-                        <li>+3000 Canales</li>
-                        <li>+17000 Películas</li>
-                        <li>+2500 Series</li>
-                        <li>Compatible con todos los dispositivos</li>
-                    </ul>
-                    <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido.%0A%0APlan+elegido%3A+PLAN+INICIAL" class="whatsapp-btn">SOLICITAR PLAN</a>
-                </div>
-                <div class="plan-box">
-                    <h3 class="plan-title">PLAN FAMILIAR</h3>
-                    <p class="plan-price">MXN $950 (6 MESES)<span>USD $50.35 (aproximado)</span></p>
-                    <ul class="plan-features">
-                        <li>Todo del Plan Inicial</li>
-                        <li>Contenido infantil</li>
-                        <li>Deportes en vivo</li>
-                        <li>Soporte prioritario</li>
-                    </ul>
-                    <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido.%0A%0APlan+elegido%3A+PLAN+FAMILIAR" class="whatsapp-btn">SOLICITAR PLAN</a>
-                </div>
-                <div class="plan-box">
-                    <h3 class="plan-title">PLAN ULTRA</h3>
-                    <p class="plan-price">MXN $1800 (12 MESES)<span>USD $95.40 (aproximado)</span></p>
-                    <ul class="plan-features">
-                        <li>Todo del Plan Familiar</li>
-                        <li>Contenido premium</li>
-                        <li>Múltiples dispositivos a la vez</li>
-                        <li>Descuento especial anual</li>
-                    </ul>
-                    <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido.%0A%0APlan+elegido%3A+PLAN+ULTRA" class="whatsapp-btn">SOLICITAR PLAN</a>
-                </div>
-            </div>
+
+    <!-- SECCIÓN DE DISTRIBUIDORES -->
+    <div class="section distributor-section">
+        <h2 class="section-title">¿Quieres ser distribuidor?</h2>
+        <p style="margin-bottom: 15px;">¿Te gustaría vender nuestro servicio digital en tu país?</p>
+        <p style="margin-bottom: 20px;">Nuestro servicio es mundial, ¡te apoyamos para empezar!</p>
+        <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+información+de+distribuidor" class="whatsapp-btn">Información para Distribuidores</a>
+    </div>
+
+    <!-- SECCIÓN DE COMPATIBILIDAD -->
+    <div class="section">
+        <h2 class="section-title">Compatible con tus dispositivos</h2>
+        <div class="devices-list">
+            <span class="device-tag">SmartTV</span>
+            <span class="device-tag">PC / Laptop</span>
+            <span class="device-tag">Celular Android</span>
+            <span class="device-tag">Celular iOS</span>
+            <span class="device-tag">Tabletas</span>
+            <span class="device-tag">TV Box</span>
+            <span class="device-tag">Amazon Stick</span>
+            <span class="device-tag">MAG BOX</span>
         </div>
     </div>
-    <div class="distributor-section">
-        <div class="distributor-content">
-            <h2 class="distributor-title">¿QUIERES SER DISTRIBUIDOR DE MULTI TV?</h2>
-            <p class="distributor-text">NUESTRO SERVICIO ESTÁ DISPONIBLE EN TODO EL MUNDO. SI NO ERES DE MÉXICO, TAMBIÉN TE PROPORCIONAMOS EL SERVICIO. CONSULTA POR NUESTROS PAQUETES PARA DISTRIBUIDORES.</p>
-            <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido.%0A%0AQuiero+información+de+ser+distribuidor." class="whatsapp-btn">INFORMACIÓN PARA DISTRIBUIDORES</a>
-        </div>
-    </div>
-    <div class="compatible-section">
-        <h2 class="section-title">COMPATIBLE CON TUS DISPOSITIVOS</h2>
-        <div class="devices-container">
-            <div class="device-box">SMART TV</div>
-            <div class="device-box">PC / LAPTOP</div>
-            <div class="device-box">CELULAR ANDROID</div>
-            <div class="device-box">CELULAR IOS</div>
-            <div class="device-box">TABLETAS</div>
-            <div class="device-box">TV BOX</div>
-            <div class="device-box">AMAZON FIRE STICK</div>
-            <div class="device-box">MAG BOX</div>
-        </div>
-    </div>
-    <div class="data-section">
-        <h2 class="section-title">NUESTROS DATOS</h2>
-        <div class="data-container">
+
+    <!-- SECCIÓN DE DATOS DEL SERVICIO -->
+    <div class="section distributor-section">
+        <h2 class="section-title">Teatro en casa</h2>
+        <div class="data-grid">
             <div class="data-box">
-                <span class="data-number">+2</span>
-                <p>AÑOS EN EL MERCADO</p>
+                <span class="data-number">2+</span>
+                <p>Años en el mercado</p>
             </div>
             <div class="data-box">
-                <span class="data-number">+1000</span>
-                <p>CLIENTES SATISFECHOS</p>
+                <span class="data-number">1000+</span>
+                <p>Clientes satisfechos</p>
             </div>
             <div class="data-box">
                 <span class="data-number">3000+</span>
-                <p>CANALES EN VIVO</p>
+                <p>Canales disponibles</p>
             </div>
             <div class="data-box">
                 <span class="data-number">17000+</span>
-                <p>PELÍCULAS</p>
+                <p>Películas</p>
             </div>
             <div class="data-box">
                 <span class="data-number">2500+</span>
-                <p>SERIES COMPLETAS</p>
+                <p>Series completas</p>
             </div>
         </div>
     </div>
+
+    <!-- FOOTER -->
     <footer>
-        <p class="footer-text">© 2024 MULTI TV - TODOS LOS DERECHOS RESERVADOS</p>
-        <p class="footer-text">SITIO OFICIAL: https://multitvmx.github.io</p>
+        <p>&copy; 2024 Multitv - Todos los derechos reservados</p>
+        <p>Sitio oficial: https://multitvmx.github.io</p>
     </footer>
-    <div class="whatsapp-float">
-        <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido." class="whatsapp-float-btn">WHATSAPP</a>
-    </div>
-    <script src="https://unirateapi.com/lander/static/js/unirate-widgets.js"></script>
 </body>
 </html>
