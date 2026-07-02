@@ -3,97 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MultiTV IPTV México - Servicio de Entretenimiento</title>
-    <meta name="description" content="MultiTV IPTV: +3000 canales, +17000 películas y +2500 series. Disponible en SmartTV, PC, Celular y más.">
-    <meta property="og:title" content="MultiTV IPTV - Servicio de Entretenimiento">
-    <meta property="og:description" content="MultiTV IPTV: +3000 canales, +17000 películas y +2500 series.">
-    <meta property="og:image" content="https://multitvmx.github.io/imagenes/logo-multitv.png">
-    <meta property="og:url" content="https://multitvmx.github.io">
+    <title>MultiTV IPTV México - El Mejor Entretenimiento Online</title>
+    <meta name="description" content="MultiTV IPTV: +3000 canales, +17000 películas y +2500 series. Disponible en todo el mundo.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background-color: #000; color: #fff; text-align: center; line-height: 1.5; }
-        .header { padding: 20px; background: linear-gradient(to bottom, #1a1a1a, #000); }
-        .logo { max-width: 250px; height: auto; }
-        .cta-btn { display: inline-block; margin: 10px; padding: 12px 25px; background-color: #ff0000; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .compatibility { padding: 30px 15px; }
-        .device-item { display: inline-block; margin: 10px; padding: 15px; background-color: #1a1a1a; border-radius: 5px; width: 120px; }
-        .device-icon { font-size: 3rem; margin-bottom: 10px; }
-        .prices { padding: 30px 15px; background-color: #1a1a1a; margin: 20px auto; max-width: 800px; border-radius: 10px; }
-        .price-card { display: inline-block; margin: 10px; padding: 20px; background-color: #2a2a2a; border-radius: 5px; min-width: 200px; }
-        .faq { max-width: 800px; margin: 30px auto; padding: 0 15px; text-align: left; }
-        .faq-item { margin: 15px 0; padding: 15px; background-color: #1a1a1a; border-left: 4px solid #ff0000; border-radius: 5px; }
-        footer { padding: 20px; background-color: #1a1a1a; margin-top: 30px; }
+        body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: #fff; text-align: center; line-height: 1.6; }
+        
+        /* Encabezado con fondo abstracto */
+        .header {
+            background: linear-gradient(to bottom, #000, #222);
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://multitvmx.github.io/imagenes/logo-multitv.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            color: #ff0000;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Botón WhatsApp principal */
+        .whatsapp-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #25d366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Sección de pasos */
+        .steps {
+            padding: 40px 20px;
+            background-color: #000;
+        }
+        .steps h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ff0000;
+        }
+        .step-item {
+            display: inline-block;
+            width: 280px;
+            margin: 15px;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            vertical-align: top;
+        }
+        .step-item img {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .step-item h3 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        /* Sección de distribuidor */
+        .distributor {
+            padding: 40px 20px;
+            background: linear-gradient(to bottom, #222, #000);
+        }
+        .distributor img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .distributor h2 {
+            color: #ff0000;
+            margin-bottom: 15px;
+        }
+        .distributor p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        /* Sección compatible */
+        .compatible {
+            padding: 40px 20px;
+            background-color: #000;
+        }
+        .compatible h2 {
+            color: #ff0000;
+            margin-bottom: 25px;
+        }
+        .device-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .device-list span {
+            display: inline-block;
+            margin: 8px 15px;
+            font-size: 1.1rem;
+            background-color: #2a2a2a;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        /* Sección de estadísticas */
+        .stats {
+            padding: 40px 20px;
+            background: linear-gradient(to bottom, #000, #222);
+        }
+        .stats h2 {
+            color: #ff0000;
+            margin-bottom: 30px;
+        }
+        .stat-item {
+            display: inline-block;
+            width: 180px;
+            margin: 15px;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+        }
+        .stat-item .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #25d366;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            background-color: #000;
+            border-top: 2px solid #ff0000;
+        }
     </style>
 </head>
 <body>
+    <!-- Encabezado similar a Zona TV -->
     <div class="header">
-        <img src="https://multitvmx.github.io/imagenes/logo-multitv.png" alt="Logo MultiTV IPTV" class="logo">
-        <p>+3000 Canales | +17000 Películas | +2500 Series</p>
-        <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido+por+un+asesor.%0A%0APlan+solicitado%3A+Sin+plan+específico" class="cta-btn">Contáctanos por WhatsApp</a>
-    </div>
-
-    <div class="compatibility">
-        <h2>COMPATIBLE CON TUS DISPOSITIVOS</h2>
-        <div class="device-item">
-            <span class="device-icon">📺</span>
-            <p>SmartTV</p>
-        </div>
-        <div class="device-item">
-            <span class="device-icon">💻</span>
-            <p>PC/Laptop</p>
-        </div>
-        <div class="device-item">
-            <span class="device-icon">📱</span>
-            <p>Celular</p>
-        </div>
-        <div class="device-item">
-            <span class="device-icon">🖥️</span>
-            <p>Tablet</p>
-        </div>
-        <div class="device-item">
-            <span class="device-icon">📦</span>
-            <p>TV Box</p>
+        <div class="header-content">
+            <h1>MULTI TV</h1>
+            <p>El Mejor Entretenimiento On Line</p>
+            <p>+3000 Canales | +17000 Películas | +2500 Series | Deportes | Contenido Premium</p>
+            <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido+por+un+asesor.%0A%0APlan+solicitado%3A+Demo+Gratis" class="whatsapp-btn">Solicita tu Demo Gratis</a>
         </div>
     </div>
 
-    <div class="prices">
-        <h2>PLANES Y PRECIOS</h2>
-        <div class="price-card">
-            <h3>PLAN INICIAL</h3>
-            <p class="price">MXN $500 | 3 Meses</p>
-            <p>Ahorro: $250 MXN</p>
-            <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido+por+un+asesor.%0A%0APlan+solicitado%3A+PLAN+INICIAL" class="cta-btn">Solicitar Plan Inicial</a>
+    <!-- Sección de pasos sencillos -->
+    <div class="steps">
+        <h2>Empieza a disfrutar en 3 Sencillos Pasos</h2>
+        <div class="step-item">
+            <img src="https://www.zonatvmx.com/paso1-removebg-preview.png" alt="Paso 1">
+            <h3>Paso 1</h3>
+            <p>Descarga e Instala IPTV Smarters Pro en tu dispositivo.</p>
         </div>
-        <div class="price-card">
-            <h3>PLAN FAMILIAR</h3>
-            <p class="price">MXN $950 | 6 Meses</p>
-            <p>Ahorro: $550 MXN</p>
-            <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido+por+un+asesor.%0A%0APlan+solicitado%3A+PLAN+FAMILIAR" class="cta-btn">Solicitar Plan Familiar</a>
+        <div class="step-item">
+            <img src="https://www.zonatvmx.com/descarga-removebg-preview.png" alt="Paso 2">
+            <h3>Paso 2</h3>
+            <p>Prueba nuestro contenido gratis solicitando tu demo.</p>
         </div>
-        <div class="price-card">
-            <h3>PLAN ULTRA</h3>
-            <p class="price">MXN $1800 | 12 Meses</p>
-            <p>Ahorro: $1200 MXN</p>
-            <a href="https://wa.me/525577465407?text=Gracias+por+comunicarte+a+multitv%2C+enseguida+serás+atendido+por+un+asesor.%0A%0APlan+solicitado%3A+PLAN+ULTRA" class="cta-btn">Solicitar Plan Ultra</a>
+        <div class="step-item">
+            <img src="https://www.zonatvmx.com/BOTON-WHATSAPP.png" alt="Paso 3">
+            <h3>Paso 3</h3>
+            <p>Selecciona el plan que más te convenga y disfruta.</p>
         </div>
     </div>
 
-    <div class="faq">
-        <h2>PREGUNTAS FRECUENTES</h2>
-        <div class="faq-item">
-            <h3>¿Cómo funciona MultiTV?</h3>
-            <p>Es un servicio de IPTV que transmite contenido por internet. Instala la app, solicita tu demo y disfruta.</p>
-        </div>
-        <div class="faq-item">
-            <h3>¿En qué países está disponible?</h3>
-            <p>Disponible en todo el mundo, solo necesitas conexión a internet.</p>
-        </div>
-        <div class="faq-item">
-            <h3>¿Qué formas de pago aceptan?</h3>
-            <p>Transferencias bancarias, tarjetas y plataformas de pago en línea.</p>
+    <!-- Sección de distribuidor -->
+    <div class="distributor">
+        <img src="https://www.zonatvmx.com/familiav2.png" alt="Distribuidor">
+        <h2>¿Te gustaría ser distribuidor de nuestro servicio?</h2>
+        <p>Nuestro servicio es mundial, si no eres de México también te proveemos el servicio.</p>
+        <a href="https://wa.me/525577465407?text=Hola%21+Quiero+información+sobre+ser+distribuidor+de+MultiTV" class="whatsapp-btn">Más información</a>
+    </div>
+
+    <!-- Sección compatible -->
+    <div class="compatible">
+        <h2>Compatible con tus dispositivos</h2>
+        <div class="device-list">
+            <span>SmartTV</span>
+            <span>PC/Laptop</span>
+            <span>Celular Android</span>
+            <span>Celular iOS</span>
+            <span>Tabletas</span>
+            <span>TV Box</span>
+            <span>Amazon Stick</span>
         </div>
     </div>
 
+    <!-- Sección de estadísticas -->
+    <div class="stats">
+        <h2>Nuestros datos</h2>
+        <div class="stat-item">
+            <span class="number">+2</span>
+            <p>Años en el mercado</p>
+        </div>
+        <div class="stat-item">
+            <span class="number">+1000</span>
+            <p>Clientes</p>
+        </div>
+        <div class="stat-item">
+            <span class="number">3000+</span>
+            <p>Canales</p>
+        </div>
+        <div class="stat-item">
+            <span class="number">17000+</span>
+            <p>Películas</p>
+        </div>
+        <div class="stat-item">
+            <span class="number">2500+</span>
+            <p>Series</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 MultiTV - Todos los derechos reservados</p>
         <p>Sitio web: https://multitvmx.github.io</p>
