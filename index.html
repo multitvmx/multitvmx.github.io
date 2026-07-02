@@ -126,6 +126,17 @@
             color: #ffcc00;
             font-weight: bold;
         }
+        .plan-price-usd {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-top: 10px;
+        }
+        /* TIPO DE CAMBIO */
+        .rate-info {
+            font-size: 1rem;
+            color: #25d366;
+            margin-bottom: 20px;
+        }
         /* PREGUNTAS FRECUENTES DESPLEGABLES */
         .faq-container {
             max-width: 600px;
@@ -183,9 +194,10 @@
         .step-box:hover {
             transform: scale(1.02);
         }
-        .step-img {
-            max-width: 80px;
-            margin-bottom: 10px;
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #25d366;
         }
         /* DISTRIBUIDORES */
         .distributor-section {
@@ -286,12 +298,14 @@
     <!-- SECCIÓN DE PLANES -->
     <div class="section">
         <h2 class="section-title">Nuestros Planes</h2>
+        <p class="rate-info" id="rate-display">Obteniendo tipo de cambio en tiempo real...</p>
         <div class="plans-container">
             <div class="plan-box">
                 <p class="plan-name">PLAN INICIAL</p>
                 <p class="plan-price">MXN $500</p>
                 <p class="plan-duration">3 Meses</p>
                 <p class="plan-saving">Ahorro: $250 MXN</p>
+                <p class="plan-price-usd" id="price-initial">USD $--.-- (aproximado)</p>
                 <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+el+Plan+Inicial" class="whatsapp-btn">Contratar Ahora</a>
             </div>
             <div class="plan-box">
@@ -299,6 +313,7 @@
                 <p class="plan-price">MXN $950</p>
                 <p class="plan-duration">6 Meses</p>
                 <p class="plan-saving">Ahorro: $550 MXN</p>
+                <p class="plan-price-usd" id="price-family">USD $--.-- (aproximado)</p>
                 <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+el+Plan+Familiar" class="whatsapp-btn">Contratar Ahora</a>
             </div>
             <div class="plan-box">
@@ -306,6 +321,7 @@
                 <p class="plan-price">MXN $1800</p>
                 <p class="plan-duration">12 Meses</p>
                 <p class="plan-saving">Ahorro: $1200 MXN</p>
+                <p class="plan-price-usd" id="price-ultra">USD $--.-- (aproximado)</p>
                 <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+el+Plan+Ultra" class="whatsapp-btn">Contratar Ahora</a>
             </div>
         </div>
@@ -343,18 +359,15 @@
         <h2 class="section-title">Empieza a disfrutar en 3 sencillos pasos</h2>
         <div class="steps-container">
             <div class="step-box">
-                <img src="https://via.placeholder.com/80x80?text=PASO+1" alt="Paso 1" class="step-img">
-                <p style="font-weight: bold; margin-bottom: 5px;">Paso 1</p>
+                <p class="step-title">Paso 1</p>
                 <p>Descarga e Instala la app en tu dispositivo (IPTV Smarters, Zona TV o Playlatin).</p>
             </div>
             <div class="step-box">
-                <img src="https://via.placeholder.com/80x80?text=PASO+2" alt="Paso 2" class="step-img">
-                <p style="font-weight: bold; margin-bottom: 5px;">Paso 2</p>
+                <p class="step-title">Paso 2</p>
                 <p>Prueba nuestro contenido completamente gratis.</p>
             </div>
             <div class="step-box">
-                <img src="https://via.placeholder.com/80x80?text=PASO+3" alt="Paso 3" class="step-img">
-                <p style="font-weight: bold; margin-bottom: 5px;">Paso 3</p>
+                <p class="step-title">Paso 3</p>
                 <p>¿Te gustó? Solicita tu acceso oficial vía WhatsApp.</p>
                 <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+mi+acceso+oficial" class="whatsapp-btn">Solicitar Acceso</a>
             </div>
@@ -427,7 +440,7 @@
         </a>
     </div>
 
-    <!-- SCRIPT PARA INTERACTIVIDAD -->
+    <!-- SCRIPT PARA INTERACTIVIDAD Y TIPO DE CAMBIO -->
     <script>
         // Preguntas frecuentes desplegables
         const faqItems = document.querySelectorAll('.faq-item');
@@ -473,6 +486,37 @@
             sections[0].style.opacity = '1';
             sections[0].style.transform = 'translateY(0)';
         }, 100);
+
+        // Obtener tipo de cambio en tiempo real MXN a USD
+        async function getExchangeRate() {
+            try {
+                // Usamos API de ExchangeRate-API (gratuita y sin clave requerida para uso básico)
+                const response = await fetch('https://api.exchangerate-api.com/v4/latest/MXN');
+                const data = await response.json();
+                const rate = data.rates.USD;
+                
+                // Mostrar tipo de cambio
+                document.getElementById('rate-display').textContent = `Tipo de cambio en tiempo real: 1 MXN = ${rate.toFixed(4)} USD`;
+                
+                // Calcular precios en dólares
+                const pricesMXN = {
+                    initial: 500,
+                    family: 950,
+                    ultra: 1800
+                };
+
+                document.getElementById('price-initial').textContent = `USD $${(pricesMXN.initial * rate).toFixed(2)} (aproximado)`;
+                document.getElementById('price-family').textContent = `USD $${(pricesMXN.family * rate).toFixed(2)} (aproximado)`;
+                document.getElementById('price-ultra').textContent = `USD $${(pricesMXN.ultra * rate).toFixed(2)} (aproximado)`;
+
+            } catch (error) {
+                document.getElementById('rate-display').textContent = 'No se pudo obtener el tipo de cambio';
+                console.error('Error al obtener tipo de cambio:', error);
+            }
+        }
+
+        // Ejecutar función al cargar la página
+        window.onload = getExchangeRate;
     </script>
 </body>
 </html>
