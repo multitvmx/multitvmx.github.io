@@ -20,6 +20,10 @@
             background-size: cover;
             padding: 40px 20px;
             position: relative;
+            transition: all 0.3s ease;
+        }
+        .header:hover {
+            background-size: 105%;
         }
         .header-overlay {
             position: absolute;
@@ -34,6 +38,10 @@
         .header-logo {
             max-width: 300px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .header-logo:hover {
+            transform: scale(1.05);
         }
         .header-title {
             font-size: 1.8rem;
@@ -44,7 +52,7 @@
             font-size: 1.1rem;
             margin-bottom: 25px;
         }
-        /* BOTONES */
+        /* BOTONES INTERACTIVOS */
         .whatsapp-btn {
             display: inline-block;
             padding: 12px 30px;
@@ -56,6 +64,12 @@
             font-size: 1.1rem;
             box-shadow: 0 0 8px rgba(37,211,102,0.7);
             margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(37,211,102,0.9);
         }
         /* SECCIONES GENERALES */
         .section {
@@ -66,10 +80,55 @@
             color: #ff0000;
             margin-bottom: 25px;
             text-transform: uppercase;
+            transition: color 0.3s ease;
         }
-        /* PREGUNTAS FRECUENTES */
+        .section-title:hover {
+            color: #ff3333;
+        }
+        /* PLANES INTERACTIVOS */
+        .plans-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .plan-box {
+            background-color: #1a1a1a;
+            padding: 30px 20px;
+            border-radius: 15px;
+            width: 280px;
+            border: 2px solid #333;
+            transition: all 0.3s ease;
+        }
+        .plan-box:hover {
+            border-color: #ff0000;
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(255,0,0,0.5);
+        }
+        .plan-name {
+            font-size: 1.4rem;
+            color: #ff0000;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .plan-price {
+            font-size: 1.8rem;
+            color: #25d366;
+            margin-bottom: 10px;
+        }
+        .plan-duration {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        .plan-saving {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        /* PREGUNTAS FRECUENTES DESPLEGABLES */
         .faq-container {
-            max-width: 400px;
+            max-width: 600px;
             margin: 0 auto;
             text-align: left;
         }
@@ -78,11 +137,34 @@
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .faq-item:hover {
+            background-color: #222;
         }
         .faq-question {
             color: #25d366;
             font-weight: bold;
             margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+        .faq-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
         }
         /* PASOS PARA DISFRUTAR */
         .steps-container {
@@ -96,6 +178,10 @@
             background-color: #1a1a1a;
             padding: 20px;
             border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .step-box:hover {
+            transform: scale(1.02);
         }
         .step-img {
             max-width: 80px;
@@ -106,19 +192,30 @@
             background-color: #1a1a1a;
             margin: 20px 0;
         }
-        /* COMPATIBILIDAD */
-        .devices-list {
+        /* COMPATIBILIDAD DESLIZABLE */
+        .devices-scroll {
+            overflow-x: auto;
+            padding-bottom: 15px;
+            scroll-behavior: smooth;
+        }
+        .devices-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             gap: 15px;
-            margin-top: 20px;
+            width: max-content;
+            padding: 0 5px;
         }
         .device-tag {
             background-color: #1a1a1a;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-radius: 20px;
+            border: 1px solid #ff0000;
             white-space: nowrap;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .device-tag:hover {
+            background-color: #ff0000;
+            color: #fff;
         }
         /* DATOS DEL SERVICIO */
         .data-grid {
@@ -133,6 +230,10 @@
             padding: 15px;
             border-radius: 8px;
             min-width: 120px;
+            transition: transform 0.3s ease;
+        }
+        .data-box:hover {
+            transform: scale(1.08);
         }
         .data-number {
             color: #25d366;
@@ -150,6 +251,23 @@
             width: 100%;
             font-size: 0.9rem;
         }
+        /* BOTÓN FLOTANTE INTERACTIVO */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        .whatsapp-float-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(37,211,102,0.7);
+        }
     </style>
 </head>
 <body>
@@ -165,25 +283,57 @@
         </div>
     </div>
 
-    <!-- SECCIÓN DE PREGUNTAS FRECUENTES -->
+    <!-- SECCIÓN DE PLANES -->
+    <div class="section">
+        <h2 class="section-title">Nuestros Planes</h2>
+        <div class="plans-container">
+            <div class="plan-box">
+                <p class="plan-name">PLAN INICIAL</p>
+                <p class="plan-price">MXN $500</p>
+                <p class="plan-duration">3 Meses</p>
+                <p class="plan-saving">Ahorro: $250 MXN</p>
+                <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+el+Plan+Inicial" class="whatsapp-btn">Contratar Ahora</a>
+            </div>
+            <div class="plan-box">
+                <p class="plan-name">PLAN FAMILIAR</p>
+                <p class="plan-price">MXN $950</p>
+                <p class="plan-duration">6 Meses</p>
+                <p class="plan-saving">Ahorro: $550 MXN</p>
+                <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+el+Plan+Familiar" class="whatsapp-btn">Contratar Ahora</a>
+            </div>
+            <div class="plan-box">
+                <p class="plan-name">PLAN ULTRA</p>
+                <p class="plan-price">MXN $1800</p>
+                <p class="plan-duration">12 Meses</p>
+                <p class="plan-saving">Ahorro: $1200 MXN</p>
+                <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+el+Plan+Ultra" class="whatsapp-btn">Contratar Ahora</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE PREGUNTAS FRECUENTES DESPLEGABLES -->
     <div class="section">
         <h2 class="section-title">Preguntas Frecuentes</h2>
         <div class="faq-container">
             <div class="faq-item">
-                <p class="faq-question">¿Cuánto contenido ofrece el servicio?</p>
-                <p>+ 3000 Canales, +17000 Películas, + 2500 Series, además de Deportes en vivo y contenido PPV.</p>
+                <p class="faq-question">¿Cómo funciona MultiTV? <span class="faq-arrow">▼</span></p>
+                <p class="faq-answer">Es un servicio de IPTV que transmite contenido por internet. Instala la app correspondiente (IPTV Smarters, Zona TV o Playlatin), solicita tu demo gratuita vía WhatsApp y disfruta de todo el contenido en tu dispositivo favorito.</p>
             </div>
             <div class="faq-item">
-                <p class="faq-question">¿Cómo empiezo a usar el servicio?</p>
-                <p>Descarga e instala la app correspondiente en tu dispositivo, luego solicita tu demo gratuita vía WhatsApp.</p>
+                <p class="faq-question">¿En qué países está disponible? <span class="faq-arrow">▼</span></p>
+                <p class="faq-answer">Disponible en todo el mundo, solo necesitas una conexión a internet estable (mínimo 5 Mbps para ver contenido en alta definición).</p>
             </div>
             <div class="faq-item">
-                <p class="faq-question">¿Es un servicio mundial?</p>
-                <p>Sí, nuestro servicio está disponible en cualquier país del mundo, no solo en México.</p>
+                <p class="faq-question">¿Qué formas de pago aceptan? <span class="faq-arrow">▼</span></p>
+                <p class="faq-answer">Aceptamos transferencias bancarias a cuentas mexicanas, tarjetas de crédito/débito (Visa, Mastercard), y plataformas de pago en línea como PayPal, Mercado Pago y Oxxo Pay.</p>
             </div>
             <div class="faq-item">
-                <p class="faq-question">¿Cómo puedo ser distribuidor?</p>
-                <p>Contáctanos vía WhatsApp para conocer los paquetes y condiciones para vender nuestro servicio en tu país.</p>
+                <p class="faq-question">¿Cómo empiezo a usar el servicio? <span class="faq-arrow">▼</span></p>
+                <p class="faq-answer">Descarga e instala la app en tu dispositivo, luego solicita tu demo gratuita por WhatsApp. Una vez que pruebes el servicio y decidas contratarlo, realiza el pago y te enviaremos los datos de acceso para configurar la app.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">¿Cómo puedo ser distribuidor? <span class="faq-arrow">▼</span></p>
+                <p class="faq-answer">Contáctanos vía WhatsApp para conocer los paquetes y condiciones para vender nuestro servicio en tu país. Ofrecemos soporte técnico, materiales de promoción y precios especiales para distribuidores.</p>
             </div>
         </div>
     </div>
@@ -219,18 +369,21 @@
         <a href="https://wa.me/525577465407?text=Hola+Multitv%2C+quiero+información+de+distribuidor" class="whatsapp-btn">Información para Distribuidores</a>
     </div>
 
-    <!-- SECCIÓN DE COMPATIBILIDAD -->
+    <!-- SECCIÓN DE COMPATIBILIDAD DESLIZABLE -->
     <div class="section">
         <h2 class="section-title">Compatible con tus dispositivos</h2>
-        <div class="devices-list">
-            <span class="device-tag">SmartTV</span>
-            <span class="device-tag">PC / Laptop</span>
-            <span class="device-tag">Celular Android</span>
-            <span class="device-tag">Celular iOS</span>
-            <span class="device-tag">Tabletas</span>
-            <span class="device-tag">TV Box</span>
-            <span class="device-tag">Amazon Stick</span>
-            <span class="device-tag">MAG BOX</span>
+        <div class="devices-scroll">
+            <div class="devices-container">
+                <span class="device-tag">SmartTV</span>
+                <span class="device-tag">PC / Laptop</span>
+                <span class="device-tag">Celular Android</span>
+                <span class="device-tag">Celular iOS</span>
+                <span class="device-tag">Tabletas</span>
+                <span class="device-tag">TV Box</span>
+                <span class="device-tag">Amazon Stick</span>
+                <span class="device-tag">MAG BOX</span>
+                <span class="device-tag">Formuler Z</span>
+            </div>
         </div>
     </div>
 
@@ -266,5 +419,60 @@
         <p>&copy; 2024 Multitv - Todos los derechos reservados</p>
         <p>Sitio oficial: https://multitvmx.github.io</p>
     </footer>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/525577465407">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-float-img">
+        </a>
+    </div>
+
+    <!-- SCRIPT PARA INTERACTIVIDAD -->
+    <script>
+        // Preguntas frecuentes desplegables
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Efecto de scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animación al hacer scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight * 0.8) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Inicializar estilos de secciones
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.5s ease';
+        });
+
+        // Activar la primera sección
+        setTimeout(() => {
+            sections[0].style.opacity = '1';
+            sections[0].style.transform = 'translateY(0)';
+        }, 100);
+    </script>
 </body>
 </html>
